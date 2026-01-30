@@ -43,10 +43,10 @@ for pageNumber in range(maxPageNumber) :
         stocks.append(stock.text.replace("Raktáron:", "").replace("db", "").strip())
 
 # WRITING DATA
-previousData = requests.get("https://raw.githubusercontent.com/Kyodai21/safehome/main/safehome_data.csv").text
+previousData = requests.get("https://raw.githubusercontent.com/Kyodai21/Safehome_scrapper/main/safehome_data.csv").text
 previousData = previousData.split("\n")
 
 with open(FILENAME, "w") as file:
-    file.write(previousData[0] + ";" + str(datetime.datetime.date(datetime.datetime.now())) + "\n")
+    file.write(previousData[0].strip() + ";" + str(datetime.datetime.date(datetime.datetime.now())) + "\n")
     for i in range(len(products)) :
-        file.write(previousData[i + 1] + ";" + str(stocks[i]) + "\n")
+        file.write(previousData[i + 1].strip() + ";" + stocks[i] + "\n")
