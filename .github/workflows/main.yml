@@ -2,7 +2,7 @@ name: Scheduled Job
 
 on:
   schedule:
-  - cron: "25 7 * * *"
+   - cron: "* * * * *"
 
 permissions:
   contents: write
