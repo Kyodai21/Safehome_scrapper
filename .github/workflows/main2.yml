@@ -1,10 +1,11 @@
 name: Schedule parsing test
 
 on:
-  push:
   schedule:
     - cron: "*/5 * * * *"
+  push:
   workflow_dispatch:
+
 
 jobs:
   test:
